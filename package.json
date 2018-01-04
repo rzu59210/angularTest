@@ -1,0 +1,20 @@
+{
+  "name": "test-angularjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/idi/test-angularjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/idi/test-angularjs#readme",
+  "dependencies": {
+    "angular": "^1.6.8",
+    "bootstrap": "^4.0.0-beta.3"
+  }
+}
