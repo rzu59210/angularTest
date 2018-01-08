@@ -1,1 +1,1 @@
-angular.module('clientModule' , []);
+var clientModule = angular.module('clientModule' , []);

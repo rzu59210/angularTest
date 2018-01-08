@@ -1,9 +1,9 @@
 <!doctype html>
-<html ng-app="app">
+<html ng-app="clientModule">
   <head>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
   </head>
-  <body ng-controller="Welcome as vm">
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <ul class="navbar-nav">
         <li class="nav-item active">
@@ -14,13 +14,23 @@
         </li>
       </ul>
     </nav>
-    <div class="container-fluid">
-      <div class="row mt-3">
+    <div class="container-fluid"  ng-controller="clientController">
+      <div class="row mt-3">  
         <div class="col">
-          <div class="alert alert-info" role="alert">
-            {{vm.message}}
+          <h1>Liste des clients</h1>
+          <div ng-if="clients">
+            <div ng-repeat="client in clients track by $index">
+                Nom du client : {{ client }}
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="row">
+          <button ng-click="listerCategorie()" class="btn btn-success">Charger les cat&eacute;gories</button>
+          <div ng-repeat="categories in categorie">
+              {{ categorie }}
+          </div>
       </div>
     </div>
     <script src="./node_modules/angular/angular.js"></script>
