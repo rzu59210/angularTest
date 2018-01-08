@@ -1,4 +1,4 @@
-clientModule.controller('clientController' ,['$scope' , '$http' , function($scope , $http){
+clientModule.controller('clientController' ,['$scope' , '$http' , 'clientFactory' , function($scope , $http , clientFactory){
 
 
 	var url = {
@@ -10,7 +10,7 @@ clientModule.controller('clientController' ,['$scope' , '$http' , function($scop
 	$scope.clients;
 	$scope.categories;
 	$scope.error = {};
-
+	$scope.client;
 
 	$http({
 	    url: url.listerClientUrl,
@@ -39,6 +39,10 @@ clientModule.controller('clientController' ,['$scope' , '$http' , function($scop
 		}).catch(function onError(error){
 		    $scope.error['categories'] = error;
 		});
+	}
+
+	$scope.creerClient = function(){
+		clientFactory.saveClient(url.createClientUrl , $scope.client);
 	}
 
 
